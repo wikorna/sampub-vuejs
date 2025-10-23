@@ -1,0 +1,60 @@
+// tsconfig.json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+
+    // ✅ TS 5+ + Vite best practices
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "verbatimModuleSyntax": true,
+
+    // ✅ Target modern browsers (adjust if you must support older)
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+
+    // ✅ Strictness (you already set most of these — great!)
+    "strict": true,
+    //    "exactOptionalPropertyTypes": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "useUnknownInCatchVariables": true,
+
+    // ✅ Catch more bugs
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,       // flip to true after cleanup if you like
+    "useDefineForClassFields": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "forceConsistentCasingInFileNames": true,
+
+    // ✅ Interop & quality of life
+    "resolveJsonModule": true,
+    "allowJs": false,
+    "checkJs": false,
+    "skipLibCheck": true,              // speed; consider false in CI weekly build
+    "isolatedModules": true,           // required by Vite’s esbuild path
+    "importsNotUsedAsValues": "error",
+
+    // Build
+    "composite": true,                 // for project references
+    "noEmit": true
+
+  },
+  "include": ["src", "src/types", "env.d.ts"],
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    },
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.vitest.json"
+    }
+  ]
+}

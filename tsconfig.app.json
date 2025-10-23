@@ -1,0 +1,22 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "env.d.ts",
+    "src/**/*",
+  ],
+  "exclude": [
+    "dist",
+    "node_modules",
+    "coverage",
+    // ตัดไฟล์เทส/สเปกออกจากชุดแอป
+    "**/*.{spec,test}.{ts,tsx}",
+    "src/**/__tests__/*"
+  ],
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
