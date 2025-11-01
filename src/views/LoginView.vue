@@ -7,7 +7,7 @@ import { login, getProfile, type LoginPayload } from '@/shared/auth/auth.api.ts'
 import { useUserStore } from '@/stores/user.store'
 import AppToaster from '@/components/AppToaster.vue'
 import { ToastType } from '@/types/toast-types'
-import { beepOk, beepErr } from '@/shared/sounds'
+//import { beepOk, beepErr } from '@/shared/sounds'
 
 const router = useRouter()
 const route = useRoute()
@@ -62,7 +62,7 @@ async function doLogin() {
     } catch {
       user.setName(username.value.trim())
     }
-    beepOk.play()
+    //beepOk.play()
     // ✅ Toast สำเร็จ
     toasterRef.value?.showToast('เข้าสู่ระบบสำเร็จ', ToastType.Success)
 
@@ -72,7 +72,7 @@ async function doLogin() {
     const msg = e instanceof Error && e.message?.trim() ? e.message : 'เข้าสู่ระบบไม่สำเร็จ'
     error.value = msg
     // ❗ Toast ข้อผิดพลาดจากเซิร์ฟเวอร์
-    beepErr.play()
+    //beepErr.play()
     toasterRef.value?.showToast(msg, ToastType.Error)
     console.error('[LoginView] login error:', e)
   } finally {

@@ -61,7 +61,7 @@ function linkClass(isActive: boolean) {
         <ul class="nav nav-tabs">
           <li class="nav-item">
             <RouterLink to="/activity" custom v-slot="{ href, navigate, isActive }">
-              <a :href="href" @click="navigate" class="nav-link" :class="{ active: isActive }">Activity</a>
+              <a :href="href" @click="navigate" class="nav-link" :class="{ active: isActive }">Activity-1</a>
             </RouterLink>
           </li>
           <li class="nav-item">
